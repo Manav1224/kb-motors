@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K.B. Motors | Premium Maruti Suzuki Service Center – Begusarai</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+:root{
+  --dark:#07101f;
+  --navy:#0e2147;
+  --primary:#1a3a8f;
+  --blue:#2f6bdc;
+  --sky:#60a5fa;
+  --yellow:#f5b90a;
+  --gold:#e8a500;
+  --green:#10b981;
+  --red:#e11d48;
+  --light:#f0f4ff;
+  --white:#ffffff;
+  --card-shadow:0 20px 60px rgba(0,0,0,.13);
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:#1e293b;background:#fff;overflow-x:hidden;}
+
+/* ── PARTICLES CANVAS ───────────────────────────────── */
+#particles-canvas{
+  position:absolute;inset:0;pointer-events:none;
+}
+
+/* ── HEADER ─────────────────────────────────────────── */
+header{
+  background:linear-gradient(135deg,#070e1f 0%,#0e2147 45%,#1a3a8f 100%);
+  color:#fff;padding:2rem;
+  position:relative;overflow:hidden;
+}
+header::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--yellow),var(--gold),var(--yellow));
+}
+.header-content{
+  max-width:1200px;margin:auto;display:flex;
+  justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:2rem;position:relative;z-index:2;
+}
+.header-brand{display:flex;align-items:center;gap:1.4rem;}
+.logo-circle{
+  width:74px;height:74px;
+  background:linear-gradient(135deg,var(--yellow),var(--gold));
+  border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:2.2rem;
+  box-shadow:0 0 0 4px rgba(245,185,10,.25),0 8px 24px rgba(245,185,10,.35);
+  animation:logoFloat 3.5s ease-in-out infinite;
+}
+@keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+.brand-text h1{
+  font-family:'Bebas Neue',cursive;font-size:2.8rem;letter-spacing:4px;
+  background:linear-gradient(90deg,#fff 0%,var(--yellow) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.brand-text .subtitle{font-size:.9rem;color:#93afd4;letter-spacing:.8px;margin-top:.2rem;}
+.brand-text .location{font-size:.82rem;color:var(--yellow);font-weight:700;margin-top:.3rem;}
+
+/* Trust badges row */
+.trust-badges{display:flex;gap:.8rem;margin-top:.7rem;flex-wrap:wrap;}
+.badge{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:50px;padding:.25rem .75rem;font-size:.72rem;
+  color:#cbd5e1;font-weight:600;backdrop-filter:blur(8px);
+}
+
+.header-contact{
+  text-align:right;
+  background:rgba(255,255,255,.08);
+  padding:1.4rem 2rem;border-radius:18px;
+  border:1.5px solid rgba(255,255,255,.15);
+  backdrop-filter:blur(12px);
+  transition:all .3s;
+}
+.header-contact:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3);}
+.phone-number{
+  font-size:1.75rem;font-weight:800;color:var(--yellow);
+  display:flex;align-items:center;justify-content:flex-end;gap:.5rem;
+}
+.phone-icon{animation:ring 2.5s ease-in-out infinite;}
+@keyframes ring{0%,100%{transform:rotate(0);}10%,30%{transform:rotate(-15deg);}20%,40%{transform:rotate(15deg);}}
+.timing{font-size:.85rem;color:#94a3b8;margin-top:.3rem;}
+
+/* Certification logos strip */
+.cert-strip{
+  background:#fff;padding:.9rem 2rem;
+  border-bottom:1px solid #e2e8f0;
+  display:flex;align-items:center;justify-content:center;
+  gap:2.5rem;flex-wrap:wrap;
+}
+.cert-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-weight:700;font-size:.82rem;color:#475569;letter-spacing:.5px;
+}
+.cert-icon{font-size:1.5rem;}
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(14,33,71,.97);backdrop-filter:blur(12px);
+  box-shadow:0 2px 20px rgba(0,0,0,.25);
+}
+nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{
+  color:#fff;padding:1rem 1.5rem;text-decoration:none;
+  font-weight:600;font-size:.92rem;position:relative;
+  transition:color .3s;display:block;letter-spacing:.5px;
+}
+nav a::after{
+  content:'';position:absolute;bottom:6px;left:50%;
+  width:0;height:3px;background:var(--yellow);
+  transform:translateX(-50%);transition:.3s;border-radius:99px;
+}
+nav a:hover::after,nav a.active::after{width:60%;}
+nav a:hover,nav a.active{color:var(--yellow);}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{
+  background:linear-gradient(135deg,rgba(7,14,31,.97),rgba(14,33,71,.93));
+  color:#fff;text-align:center;padding:7rem 2rem 8rem;
+  position:relative;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:50px 50px;
+}
+.hero-badge{
+  display:inline-block;background:rgba(245,185,10,.15);
+  border:1px solid rgba(245,185,10,.4);
+  color:var(--yellow);font-size:.82rem;font-weight:700;
+  letter-spacing:2px;padding:.4rem 1.2rem;border-radius:50px;
+  margin-bottom:1.5rem;text-transform:uppercase;
+}
+.hero h2{
+  font-family:'DM Serif Display',serif;font-size:3.8rem;
+  line-height:1.1;
+  background:linear-gradient(135deg,#fff 0%,var(--yellow) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:1rem;
+}
+.hero p{max-width:650px;margin:.5rem auto 2.5rem;color:#94a3b8;font-size:1.1rem;line-height:1.7;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.cta{
+  background:linear-gradient(135deg,var(--yellow),var(--gold));
+  border:none;padding:1rem 2.8rem;border-radius:50px;
+  font-size:1rem;font-weight:700;cursor:pointer;color:#07101f;
+  transition:all .3s;font-family:'DM Sans',sans-serif;
+}
+.cta:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(245,185,10,.45);}
+.cta-ghost{
+  background:transparent;border:2px solid rgba(255,255,255,.3);
+  color:#fff;padding:1rem 2.8rem;border-radius:50px;
+  font-size:1rem;font-weight:700;cursor:pointer;
+  transition:all .3s;font-family:'DM Sans',sans-serif;
+}
+.cta-ghost:hover{border-color:var(--yellow);color:var(--yellow);}
+
+/* Scroll indicator */
+.scroll-indicator{
+  margin-top:3rem;animation:bounce 2s infinite;color:#475569;font-size:.8rem;letter-spacing:1px;
+}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+/* ── STATS ───────────────────────────────────────────── */
+.stats-section{background:#fff;padding:4rem 2rem;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:1200px;margin:auto;}
+.stat{
+  background:linear-gradient(135deg,var(--primary),var(--blue));
+  color:#fff;padding:2.5rem;border-radius:var(--radius);text-align:center;
+  transition:transform .3s;position:relative;overflow:hidden;
+}
+.stat::before{
+  content:'';position:absolute;top:-50%;right:-30%;
+  width:100px;height:100px;background:rgba(255,255,255,.06);
+  border-radius:50%;
+}
+.stat:hover{transform:translateY(-7px);}
+.stat .num{font-family:'Bebas Neue',cursive;font-size:3.2rem;letter-spacing:2px;color:var(--yellow);}
+.stat p{font-size:.9rem;color:#bfdbfe;margin-top:.2rem;font-weight:600;letter-spacing:.5px;}
+
+/* ── SECTION HELPERS ─────────────────────────────────── */
+.container{max-width:1200px;margin:auto;padding:5rem 2rem;}
+.section-label{
+  text-align:center;font-size:.78rem;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--blue);margin-bottom:.8rem;
+}
+.section-title{
+  text-align:center;font-family:'DM Serif Display',serif;font-size:2.7rem;
+  color:var(--navy);margin-bottom:3.5rem;line-height:1.2;
+}
+.section-title span{color:var(--blue);}
+
+/* ── SERVICES ────────────────────────────────────────── */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2rem;}
+.card{
+  background:#fff;padding:2.2rem;border-radius:var(--radius);
+  box-shadow:var(--card-shadow);transition:all .35s;
+  border:1.5px solid #e8eef8;position:relative;overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--primary),var(--blue));
+  transform:scaleX(0);transform-origin:left;transition:.35s;
+}
+.card:hover::before{transform:scaleX(1);}
+.card:hover{transform:translateY(-8px);box-shadow:0 25px 70px rgba(0,0,0,.16);}
+.card-icon{font-size:2.2rem;margin-bottom:1rem;}
+.card h3{color:var(--navy);margin-bottom:1rem;font-size:1.1rem;font-weight:700;}
+.card ul{list-style:none;}
+.card li{padding:.35rem 0;font-size:.92rem;color:#475569;border-bottom:1px dashed #f1f5f9;}
+.card li:last-child{border:none;}
+.card li::before{content:"✓ ";color:var(--green);font-weight:700;}
+
+.bosch-card{
+  border:2px solid var(--red) !important;
+  background:linear-gradient(135deg,#fff5f7,#fff) !important;
+}
+.bosch-card::before{background:linear-gradient(90deg,var(--red),#f87171) !important;}
+.bosch-card h3{color:var(--red);}
+
+/* ── PRICE ESTIMATOR ─────────────────────────────────── */
+.estimator-section{background:linear-gradient(135deg,var(--navy),var(--primary));padding:5rem 2rem;}
+.estimator-box{
+  max-width:700px;margin:auto;
+  background:rgba(255,255,255,.07);
+  border:1.5px solid rgba(255,255,255,.15);
+  border-radius:28px;padding:3rem;backdrop-filter:blur(12px);
+  color:#fff;
+}
+.estimator-box .section-title{color:#fff;margin-bottom:2rem;}
+.est-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.est-row select{
+  width:100%;padding:.9rem 1rem;border-radius:12px;
+  border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:.95rem;cursor:pointer;
+}
+.est-row select option{background:#0e2147;color:#fff;}
+.price-result{
+  margin-top:1.5rem;padding:1.5rem;border-radius:16px;
+  background:rgba(245,185,10,.12);border:1.5px solid rgba(245,185,10,.3);
+  text-align:center;display:none;
+}
+.price-result .price-range{
+  font-family:'Bebas Neue',cursive;font-size:3rem;color:var(--yellow);letter-spacing:2px;
+}
+.price-result .price-note{font-size:.82rem;color:#93afd4;margin-top:.4rem;}
+.est-btn{
+  width:100%;padding:1rem;border:none;border-radius:14px;
+  background:linear-gradient(135deg,var(--yellow),var(--gold));
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;
+  color:#07101f;cursor:pointer;margin-top:1rem;transition:all .3s;
+}
+.est-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,185,10,.4);}
+
+/* ── GALLERY / BEFORE-AFTER ──────────────────────────── */
+.gallery-section{background:var(--light);padding:5rem 2rem;}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.8rem;max-width:1200px;margin:auto;
+}
+.gallery-item{
+  border-radius:18px;overflow:hidden;box-shadow:var(--card-shadow);
+  position:relative;cursor:pointer;
+}
+.ba-wrap{display:flex;height:220px;position:relative;}
+.ba-before,.ba-after{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:1rem;position:relative;overflow:hidden;
+}
+.ba-before{background:linear-gradient(135deg,#374151,#6b7280);color:#d1d5db;}
+.ba-after{background:linear-gradient(135deg,#0e2147,#1a3a8f);color:#fff;}
+.ba-divider{
+  position:absolute;left:50%;top:0;bottom:0;width:3px;
+  background:var(--yellow);z-index:2;
+}
+.ba-divider::before{
+  content:'◀▶';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:var(--yellow);color:#07101f;font-size:.6rem;
+  padding:.3rem .4rem;border-radius:50px;white-space:nowrap;font-weight:900;
+}
+.ba-label{
+  position:absolute;top:10px;left:10px;
+  background:rgba(0,0,0,.6);color:#fff;
+  font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:50px;
+}
+.ba-after-label{left:auto;right:10px;background:var(--green);}
+.gallery-caption{
+  background:#fff;padding:1rem 1.2rem;
+  font-weight:700;font-size:.9rem;color:var(--navy);
+  display:flex;align-items:center;gap:.5rem;
+}
+
+/* ── TESTIMONIALS ────────────────────────────────────── */
+.testimonials-section{padding:5rem 2rem;background:#fff;}
+.testimonials-track{
+  max-width:1200px;margin:auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;
+}
+.review-card{
+  background:#fff;border-radius:var(--radius);padding:2rem;
+  box-shadow:var(--card-shadow);border:1.5px solid #e8eef8;
+  position:relative;transition:transform .3s;
+}
+.review-card:hover{transform:translateY(-6px);}
+.review-card::before{
+  content:'"';font-family:'DM Serif Display',serif;
+  font-size:5rem;color:var(--light);position:absolute;
+  top:-10px;left:20px;line-height:1;z-index:0;
+}
+.stars{color:var(--yellow);font-size:1.1rem;margin-bottom:.8rem;}
+.review-text{font-size:.93rem;color:#475569;line-height:1.7;position:relative;z-index:1;}
+.reviewer{display:flex;align-items:center;gap:.8rem;margin-top:1.2rem;}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:1rem;flex-shrink:0;
+}
+.reviewer-info strong{display:block;font-size:.9rem;color:var(--navy);}
+.reviewer-info span{font-size:.78rem;color:#94a3b8;}
+.google-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  background:#f8fafc;border:1px solid #e2e8f0;
+  border-radius:50px;padding:.2rem .6rem;font-size:.72rem;
+  color:#475569;font-weight:600;margin-top:.5rem;
+}
+
+/* ── BOOKING ─────────────────────────────────────────── */
+.booking{background:var(--light);padding:5rem 2rem;}
+.form-box{
+  background:#fff;padding:3rem;border-radius:28px;
+  max-width:680px;margin:auto;
+  box-shadow:0 30px 80px rgba(0,0,0,.14);
+}
+.form-group{margin-bottom:1.3rem;}
+label{font-weight:700;color:var(--navy);font-size:.9rem;display:block;margin-bottom:.45rem;}
+input,select,textarea{
+  width:100%;padding:.9rem 1rem;border-radius:12px;
+  border:1.8px solid #e2e8f0;font-family:'DM Sans',sans-serif;
+  font-size:.95rem;color:#334155;transition:all .3s;
+  background:#f8fafc;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--blue);
+  background:#fff;box-shadow:0 0 0 4px rgba(47,107,220,.08);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.submit{
+  padding:1rem 2rem;border:none;border-radius:14px;
+  font-size:1rem;font-weight:700;cursor:pointer;
+  font-family:'DM Sans',sans-serif;transition:all .3s;
+}
+.submit-primary{
+  background:linear-gradient(135deg,var(--primary),var(--blue));
+  color:#fff;width:100%;
+}
+.submit-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(26,58,143,.35);}
+
+/* Success toast */
+.toast{
+  position:fixed;bottom:2rem;right:2rem;z-index:9999;
+  background:#10b981;color:#fff;
+  padding:1rem 1.8rem;border-radius:14px;
+  font-weight:700;box-shadow:0 10px 30px rgba(16,185,129,.35);
+  transform:translateY(100px);opacity:0;
+  transition:all .4s cubic-bezier(.175,.885,.32,1.275);
+  display:flex;align-items:center;gap:.6rem;font-size:.95rem;
+}
+.toast.show{transform:translateY(0);opacity:1;}
+
+.action-btns{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.whatsapp-btn{
+  flex:1;background:#25D366;color:#fff;border:none;
+  padding:1rem;border-radius:14px;font-weight:700;
+  font-family:'DM Sans',sans-serif;font-size:.95rem;
+  cursor:pointer;transition:all .3s;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+}
+.whatsapp-btn:hover{background:#128C7E;transform:translateY(-2px);}
+.email-btn{
+  flex:1;background:var(--blue);color:#fff;
+  padding:1rem;border-radius:14px;font-weight:700;
+  font-size:.95rem;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  transition:all .3s;
+}
+.email-btn:hover{background:var(--primary);transform:translateY(-2px);}
+
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq-section{padding:5rem 2rem;background:#fff;}
+.faq-list{max-width:780px;margin:auto;}
+.faq-item{
+  border:1.5px solid #e8eef8;border-radius:16px;
+  margin-bottom:1rem;overflow:hidden;transition:all .3s;
+}
+.faq-item:hover{border-color:var(--blue);}
+.faq-q{
+  padding:1.2rem 1.5rem;font-weight:700;color:var(--navy);
+  cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;font-size:.97rem;user-select:none;
+}
+.faq-q .arrow{
+  font-size:.8rem;transition:transform .3s;color:var(--blue);flex-shrink:0;
+}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;
+  font-size:.92rem;color:#475569;line-height:1.7;
+  padding:0 1.5rem;background:#f8fafc;
+}
+.faq-item.open .faq-a{max-height:300px;padding:1rem 1.5rem 1.2rem;}
+.faq-item.open .arrow{transform:rotate(180deg);}
+.faq-item.open{border-color:var(--blue);box-shadow:0 4px 20px rgba(47,107,220,.1);}
+
+/* ── CONTACT ─────────────────────────────────────────── */
+.contact-section{background:var(--light);padding:5rem 2rem;}
+.contact-box{
+  background:#fff;padding:3rem;border-radius:30px;
+  box-shadow:var(--card-shadow);max-width:900px;margin:auto;
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+.contact-info h3{
+  font-family:'DM Serif Display',serif;font-size:1.6rem;
+  color:var(--navy);margin-bottom:1.5rem;
+}
+.info-row{
+  display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;
+  padding:1rem;border-radius:14px;background:#f8fafc;
+}
+.info-icon{font-size:1.5rem;flex-shrink:0;}
+.info-text strong{display:block;font-size:.85rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;}
+.info-text span{font-size:.95rem;color:#334155;}
+.map-container{border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.15);}
+.map-container iframe{width:100%;height:320px;border:0;display:block;}
+
+/* ── FLOATING WHATSAPP ───────────────────────────────── */
+.float-wa{
+  position:fixed;bottom:2rem;left:2rem;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;
+  justify-content:center;font-size:1.7rem;
+  box-shadow:0 6px 24px rgba(37,211,102,.5);
+  cursor:pointer;text-decoration:none;
+  animation:waPulse 2.5s infinite;transition:transform .3s;
+}
+.float-wa:hover{transform:scale(1.15);}
+@keyframes waPulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}
+  70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+.float-wa-label{
+  position:absolute;left:70px;top:50%;transform:translateY(-50%);
+  background:#07101f;color:#fff;padding:.3rem .8rem;
+  border-radius:8px;font-size:.78rem;font-weight:700;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.float-wa:hover .float-wa-label{opacity:1;}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{
+  background:linear-gradient(135deg,#07101f,var(--navy));
+  color:#fff;padding:3rem 2rem;margin-top:0;
+}
+.footer-inner{
+  max-width:1200px;margin:auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:2rem;
+}
+.footer-brand{font-family:'Bebas Neue',cursive;font-size:2rem;letter-spacing:3px;color:var(--yellow);}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.footer-links a{color:#94a3b8;text-decoration:none;font-size:.88rem;font-weight:600;transition:color .3s;}
+.footer-links a:hover{color:var(--yellow);}
+.footer-copy{
+  text-align:center;color:#475569;font-size:.82rem;
+  margin-top:2rem;border-top:1px solid rgba(255,255,255,.06);
+  padding-top:2rem;max-width:1200px;margin-inline:auto;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:768px){
+  .hero h2{font-size:2.6rem;}
+  .header-content{flex-direction:column;text-align:center;}
+  .header-contact{text-align:center;}
+  .phone-number{justify-content:center;}
+  .brand-text h1{font-size:2.2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .est-row{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .trust-badges{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/919835214115" target="_blank" title="Chat on WhatsApp">
+  💬
+  <span class="float-wa-label">Chat on WhatsApp</span>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Booking submitted! We'll call you soon.</div>
+
+<!-- HEADER -->
+<header>
+  <canvas id="particles-canvas"></canvas>
+  <div class="header-content">
+    <div class="header-brand">
+      <div class="logo-circle">🚗</div>
+      <div class="brand-text">
+        <h1>K.B. MOTORS</h1>
+        <p class="subtitle">Maruti Suzuki Authorized Service Center</p>
+        <p class="location">📍 Begusarai, Bihar &nbsp;|&nbsp; Since 2003</p>
+        <div class="trust-badges">
+          <span class="badge">✅ Maruti Authorized</span>
+          <span class="badge">🔧 Bosch Partner</span>
+          <span class="badge">⭐ 20+ Yrs Experience</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-contact">
+      <div class="phone-number">
+        <span class="phone-icon">📞</span>
+        9835214115
+      </div>
+      <p class="timing">Mon – Sun &nbsp;|&nbsp; 9:30 AM – 7:00 PM</p>
+    </div>
+  </div>
+</header>
+
+<!-- CERTIFICATION STRIP -->
+<div class="cert-strip">
+  <div class="cert-item"><span class="cert-icon">🏅</span>MARUTI SUZUKI AUTHORIZED</div>
+  <div class="cert-item"><span class="cert-icon">🔴</span>BOSCH CERTIFIED PARTNER</div>
+  <div class="cert-item"><span class="cert-icon">🛡️</span>100% GENUINE PARTS</div>
+  <div class="cert-item"><span class="cert-icon">📋</span>WARRANTY ON SERVICE</div>
+  <div class="cert-item"><span class="cert-icon">🚘</span>FREE PICKUP & DROP</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#estimator">Price Guide</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking">Book Now</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <canvas id="hero-canvas" style="position:absolute;inset:0;pointer-events:none;"></canvas>
+  <div style="position:relative;z-index:2;">
+    <div class="hero-badge">🏆 Begusarai's Most Trusted Auto Service</div>
+    <h2>Drive with<br>Confidence</h2>
+    <p>Your trusted Maruti Suzuki service partner for over 20 years. Expert technicians, genuine parts, and unmatched service quality.</p>
+    <div class="hero-btns">
+      <button class="cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">📅 Book a Service</button>
+      <button class="cta-ghost" onclick="document.getElementById('estimator').scrollIntoView({behavior:'smooth'})">💰 Get Price Estimate</button>
+    </div>
+    <div class="scroll-indicator">↓ &nbsp; Scroll to explore</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats">
+    <div class="stat" data-aos="fade-up" data-aos-delay="0">
+      <div class="num" data-target="20">0</div><p>Years Experience</p>
+    </div>
+    <div class="stat" data-aos="fade-up" data-aos-delay="100">
+      <div class="num" data-target="40">0</div><p>Expert Technicians</p>
+    </div>
+    <div class="stat" data-aos="fade-up" data-aos-delay="200">
+      <div class="num" data-target="10000">0</div><p>Happy Customers</p>
+    </div>
+    <div class="stat" data-aos="fade-up" data-aos-delay="300">
+      <div class="num">100%</div><p>Genuine Parts</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="container" id="services">
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title">Our <span>Services</span></h2>
+  <div class="services">
+    <div class="card" data-aos="fade-up" data-aos-delay="0">
+      <div class="card-icon">🔧</div>
+      <h3>General Service</h3>
+      <ul>
+        <li>Engine Oil Change</li>
+        <li>Brake Inspection & Repair</li>
+        <li>Car Washing & Greasing</li>
+        <li>Battery Check</li>
+      </ul>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="80">
+      <div class="card-icon">⚙️</div>
+      <h3>Engine & Transmission</h3>
+      <ul>
+        <li>Complete Engine Repair</li>
+        <li>Clutch Overhaul</li>
+        <li>Gearbox Service</li>
+        <li>Suspension Work</li>
+      </ul>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="160">
+      <div class="card-icon">🎨</div>
+      <h3>Body, Paint & Denting</h3>
+      <ul>
+        <li>Full Car Painting</li>
+        <li>Panel Painting</li>
+        <li>Denting & Accident Repair</li>
+        <li>Polishing & Teflon Coating</li>
+      </ul>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="0">
+      <div class="card-icon">🛒</div>
+      <h3>Car Parts & Accessories</h3>
+      <ul>
+        <li>Genuine Maruti Spare Parts</li>
+        <li>Car Parts Selling</li>
+        <li>Lubricants & Oils</li>
+        <li>Car Accessories</li>
+      </ul>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="80">
+      <div class="card-icon">🛞</div>
+      <h3>Tyres & Wheel Care</h3>
+      <ul>
+        <li>New Tyre Selling</li>
+        <li>Wheel Alignment</li>
+        <li>Wheel Balancing</li>
+        <li>Tyre Rotation</li>
+      </ul>
+    </div>
+    <div class="card bosch-card" data-aos="fade-up" data-aos-delay="160">
+      <div class="card-icon">🔴</div>
+      <h3>Bosch Wheel Care</h3>
+      <ul>
+        <li>Computerized Wheel Balancing</li>
+        <li>High-Precision Wheel Alignment</li>
+        <li>Advanced Diagnostic Equipment</li>
+        <li>Official Bosch Partnership</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE ESTIMATOR -->
+<section class="estimator-section" id="estimator">
+  <div class="estimator-box" data-aos="fade-up">
+    <p class="section-label" style="color:#93afd4;">Quick Tool</p>
+    <h2 class="section-title" style="color:#fff;margin-bottom:1.5rem;">Service Price <span style="color:var(--yellow)">Estimator</span></h2>
+    <p style="color:#93afd4;text-align:center;margin-bottom:2rem;font-size:.93rem;">Select your car model and service type to get an approximate cost range.</p>
+    <div class="est-row">
+      <select id="est-model">
+        <option value="">🚗 Select Car Model</option>
+        <option value="alto">Maruti Alto</option>
+        <option value="swift">Maruti Swift</option>
+        <option value="wagonr">Maruti WagonR</option>
+        <option value="dzire">Maruti Dzire</option>
+        <option value="vitara">Maruti Vitara Brezza</option>
+        <option value="baleno">Maruti Baleno</option>
+        <option value="ertiga">Maruti Ertiga</option>
+        <option value="other">Other Maruti Model</option>
+      </select>
+      <select id="est-service">
+        <option value="">🔧 Select Service</option>
+        <option value="basic">Basic Service (Oil + Filter)</option>
+        <option value="standard">Standard Service</option>
+        <option value="comprehensive">Comprehensive Service</option>
+        <option value="ac">AC Service & Repair</option>
+        <option value="paint-panel">Panel Painting</option>
+        <option value="paint-full">Full Car Painting</option>
+        <option value="alignment">Wheel Alignment</option>
+        <option value="brakes">Brake Repair</option>
+        <option value="engine">Engine Overhaul</option>
+      </select>
+    </div>
+    <button class="est-btn" onclick="estimatePrice()">⚡ Get Estimate</button>
+    <div class="price-result" id="price-result">
+      <div class="price-range" id="price-range">₹1,500 – ₹2,000</div>
+      <div class="price-note">Estimated range · Final price depends on inspection · Call us for exact quote</div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER GALLERY -->
+<section class="gallery-section" id="gallery">
+  <p class="section-label">Our Work</p>
+  <h2 class="section-title">Before & <span>After</span></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item" data-aos="fade-up">
+      <div class="ba-wrap">
+        <div class="ba-before">
+          <span class="ba-label">BEFORE</span>
+          🚗 Dented Panel
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-after">
+          <span class="ba-label ba-after-label">AFTER</span>
+          ✨ Restored Panel
+        </div>
+      </div>
+      <div class="gallery-caption">🎨 Denting & Panel Restoration</div>
+    </div>
+    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+      <div class="ba-wrap">
+        <div class="ba-before">
+          <span class="ba-label">BEFORE</span>
+          🚗 Faded Paint
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-after">
+          <span class="ba-label ba-after-label">AFTER</span>
+          ✨ Full Repaint
+        </div>
+      </div>
+      <div class="gallery-caption">🖌️ Full Body Painting</div>
+    </div>
+    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+      <div class="ba-wrap">
+        <div class="ba-before">
+          <span class="ba-label">BEFORE</span>
+          🚗 Dirty Engine Bay
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-after">
+          <span class="ba-label ba-after-label">AFTER</span>
+          ✨ Clean & Serviced
+        </div>
+      </div>
+      <div class="gallery-caption">⚙️ Engine Service & Detailing</div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;color:#94a3b8;font-size:.88rem;">
+    📲 Visit us in person or WhatsApp to see real work photos from our workshop
+  </p>
+</section>
+
+<!-- REVIEWS / TESTIMONIALS -->
+<section class="testimonials-section" id="reviews">
+  <p class="section-label">Customer Stories</p>
+  <h2 class="section-title">What Our <span>Customers Say</span></h2>
+  <div class="testimonials-track">
+
+    <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Got my Swift's engine overhauled here. The technicians were extremely knowledgeable and the car runs like new. Very transparent about costs — no hidden charges at all.</p>
+      <div class="reviewer">
+        <div class="avatar">RK</div>
+        <div class="reviewer-info">
+          <strong>Rajesh Kumar</strong>
+          <span>Maruti Swift Owner</span>
+          <div class="google-badge">🔵 Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Best denting and painting work in Begusarai! My Dzire had a bad accident dent and they restored it to showroom condition. Highly recommend K.B. Motors for body work.</p>
+      <div class="reviewer">
+        <div class="avatar">SP</div>
+        <div class="reviewer-info">
+          <strong>Sunita Prasad</strong>
+          <span>Maruti Dzire Owner</span>
+          <div class="google-badge">🔵 Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Been coming here for 8 years for all my Maruti cars. Honest service, genuine parts, and great staff. The Bosch wheel alignment setup is very precise — worth every rupee.</p>
+      <div class="reviewer">
+        <div class="avatar">AM</div>
+        <div class="reviewer-info">
+          <strong>Arun Mishra</strong>
+          <span>WagonR & Alto Owner</span>
+          <div class="google-badge">🔵 Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="stars">★★★★☆</div>
+      <p class="review-text">Called them for pickup and they came on time. Routine service done well, car returned cleaned. Staff explained every item on the bill. Will definitely come back.</p>
+      <div class="reviewer">
+        <div class="avatar">VT</div>
+        <div class="reviewer-info">
+          <strong>Vivek Thakur</strong>
+          <span>Maruti Alto K10 Owner</span>
+          <div class="google-badge">🔵 Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">AC was not cooling at all, they fixed it same day at a very fair price. No upselling, no drama — just honest work. This is the only place I trust for my Baleno.</p>
+      <div class="reviewer">
+        <div class="avatar">NK</div>
+        <div class="reviewer-info">
+          <strong>Neha Kumari</strong>
+          <span>Maruti Baleno Owner</span>
+          <div class="google-badge">🔵 Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Took my Ertiga for a full service before a long road trip. They inspected everything thoroughly and gave a detailed report. Excellent experience, zero issues on the trip.</p>
+      <div class="reviewer">
+        <div class="avatar">PS</div>
+        <div class="reviewer-info">
+          <strong>Prashant Singh</strong>
+          <span>Maruti Ertiga Owner</span>
+          <div class="google-badge">🔵 Google Review</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <p class="section-label">Schedule</p>
+  <h2 class="section-title">Book a <span>Service</span></h2>
+  <div class="form-box" data-aos="fade-up">
+    <form id="booking-form" onsubmit="handleBooking(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input id="name" placeholder="e.g. Rahul Sharma" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input id="phone" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Car Model</label>
+          <input id="vehicle" placeholder="e.g. Maruti Swift 2020" required>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date" id="date" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service Required</label>
+        <select id="service-type">
+          <option value="">Select service type</option>
+          <option>General Service</option>
+          <option>Engine Repair</option>
+          <option>Denting & Painting</option>
+          <option>Wheel Alignment</option>
+          <option>AC Repair</option>
+          <option>Brake Repair</option>
+          <option>Tyre Replacement</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Additional Notes (optional)</label>
+        <textarea id="notes" rows="3" placeholder="Describe your issue or any special requirements..."></textarea>
+      </div>
+      <button type="submit" class="submit submit-primary">✅ Submit Booking Request</button>
+    </form>
+    <div class="action-btns">
+      <button class="whatsapp-btn" onclick="sendWhatsApp()">📲 WhatsApp Us</button>
+      <a href="mailto:car4service@yahoo.com?subject=Service Booking Request" class="email-btn">📧 Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <p class="section-label">Got Questions?</p>
+  <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Do you provide pickup and drop service?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Yes! We offer free pickup and drop within Begusarai city. Simply book your service online or call us at 9835214115 and we'll arrange a convenient time.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How long does a standard service take?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">A basic service (oil + filter change) typically takes 2–3 hours. A comprehensive service may take a full day. For major repairs like engine work, we'll give you a specific turnaround estimate after inspection.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Do you use genuine Maruti Suzuki spare parts?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Absolutely. As an authorized Maruti Suzuki service center, we use only 100% genuine parts. This ensures warranty compliance and long-term reliability of your vehicle.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Is there a warranty on your service work?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Yes, we provide a service warranty on all work done at K.B. Motors. Parts replaced carry manufacturer warranty. Please ask our service advisor for details specific to your job card.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What are your working hours?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">We are open 7 days a week from 9:30 AM to 7:00 PM, including Sundays and most holidays. For urgent needs, feel free to call or WhatsApp us at 9835214115.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I get an estimate before committing to a repair?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Yes, always. After a free inspection, our service advisor will provide a written estimate before any work begins. No surprises — we believe in full transparency.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Do you service non-Maruti cars?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Our primary expertise and authorization is for Maruti Suzuki vehicles. However, for general services like oil changes, wheel alignment, and tyre fitting, we can assist with other brands. Please call us to confirm.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <p class="section-label">Find Us</p>
+  <h2 class="section-title">Visit <span>Our Workshop</span></h2>
+  <div class="contact-box" data-aos="fade-up">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <div class="info-row">
+          <span class="info-icon">📍</span>
+          <div class="info-text">
+            <strong>Address</strong>
+            <span>Begusarai, Bihar, India</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">📞</span>
+          <div class="info-text">
+            <strong>Phone</strong>
+            <span><a href="tel:9835214115" style="color:#1e3a8a;text-decoration:none;font-weight:700;">9835214115</a></span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">📧</span>
+          <div class="info-text">
+            <strong>Email</strong>
+            <span><a href="mailto:car4service@yahoo.com" style="color:#1e3a8a;text-decoration:none;">car4service@yahoo.com</a></span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🕐</span>
+          <div class="info-text">
+            <strong>Working Hours</strong>
+            <span>Mon – Sun &nbsp;|&nbsp; 9:30 AM – 7:00 PM</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">📲</span>
+          <div class="info-text">
+            <strong>WhatsApp</strong>
+            <span><a href="https://wa.me/919835214115" target="_blank" style="color:#25D366;font-weight:700;text-decoration:none;">Chat with us →</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.2436496724363!2d86.088687474034!3d25.430116522229664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f20ff909abd1ff%3A0x9982edb42a1ad252!2sMaruti%20Authorized%20Service%20Station%20-%20K%20B%20Motors!5e0!3m2!1sen!2sin!4v1767779020680!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">K.B. MOTORS</div>
+      <p style="color:#475569;font-size:.83rem;margin-top:.4rem;">Maruti Suzuki Authorized · Begusarai · Est. 2003</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#estimator">Price Guide</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#booking">Book Now</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 K.B. Motors, Begusarai. All rights reserved.</div>
+</footer>
+
+<!-- AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+// ── AOS INIT ─────────────────────────────────────────
+AOS.init({duration:700,once:true,offset:60});
+
+// ── ACTIVE NAV ON SCROLL ──────────────────────────────
+const navLinks=document.querySelectorAll('nav a');
+const sections=document.querySelectorAll('section[id],.stats-section');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120)cur=s.id||'home';
+  });
+  navLinks.forEach(a=>{
+    a.classList.remove('active');
+    if(a.getAttribute('href')==='#'+cur)a.classList.add('active');
+  });
+});
+
+// ── COUNTER ANIMATION ─────────────────────────────────
+const nums=document.querySelectorAll('[data-target]');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el=entry.target;
+      const target=+el.dataset.target;
+      let count=0;
+      const step=Math.ceil(target/60);
+      const t=setInterval(()=>{
+        count=Math.min(count+step,target);
+        el.textContent=target===10000?count.toLocaleString()+'+':(count<target?count:count+'+');
+        if(count>=target)clearInterval(t);
+      },25);
+      observer.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+nums.forEach(n=>observer.observe(n));
+
+// ── PARTICLE CANVAS ───────────────────────────────────
+(function(){
+  const canvas=document.getElementById('particles-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+  function resize(){
+    W=canvas.width=canvas.offsetWidth;
+    H=canvas.height=canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  for(let i=0;i<40;i++)particles.push({
+    x:Math.random()*W,y:Math.random()*H,
+    r:Math.random()*2+.5,
+    vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
+    a:Math.random()*.5+.1
+  });
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(245,185,10,${p.a})`;ctx.fill();
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── PRICE ESTIMATOR ───────────────────────────────────
+const prices={
+  basic:{alto:'800-1200',swift:'1000-1500',wagonr:'900-1300',dzire:'1000-1500',vitara:'1200-1800',baleno:'1000-1500',ertiga:'1200-1800',other:'900-1500'},
+  standard:{alto:'1500-2200',swift:'2000-3000',wagonr:'1800-2500',dzire:'2000-3000',vitara:'2500-3500',baleno:'2000-3000',ertiga:'2500-3500',other:'1800-3000'},
+  comprehensive:{alto:'3000-4500',swift:'4000-6000',wagonr:'3500-5000',dzire:'4000-6000',vitara:'5000-7000',baleno:'4500-6500',ertiga:'5000-7500',other:'3500-6000'},
+  ac:{alto:'800-1500',swift:'1000-2000',wagonr:'900-1800',dzire:'1000-2000',vitara:'1200-2500',baleno:'1000-2000',ertiga:'1200-2500',other:'800-2000'},
+  'paint-panel':{alto:'2000-3500',swift:'2500-4000',wagonr:'2200-3800',dzire:'2500-4000',vitara:'3000-5000',baleno:'2500-4500',ertiga:'3000-5000',other:'2000-4000'},
+  'paint-full':{alto:'12000-18000',swift:'15000-22000',wagonr:'13000-20000',dzire:'15000-22000',vitara:'18000-28000',baleno:'16000-25000',ertiga:'20000-30000',other:'12000-25000'},
+  alignment:{alto:'300-500',swift:'350-600',wagonr:'300-500',dzire:'350-600',vitara:'400-700',baleno:'350-600',ertiga:'400-700',other:'300-600'},
+  brakes:{alto:'800-1500',swift:'1000-2000',wagonr:'900-1800',dzire:'1000-2000',vitara:'1200-2500',baleno:'1000-2000',ertiga:'1200-2500',other:'800-2000'},
+  engine:{alto:'15000-25000',swift:'18000-30000',wagonr:'16000-28000',dzire:'18000-30000',vitara:'22000-38000',baleno:'20000-35000',ertiga:'25000-40000',other:'15000-35000'}
+};
+function estimatePrice(){
+  const m=document.getElementById('est-model').value;
+  const s=document.getElementById('est-service').value;
+  const res=document.getElementById('price-result');
+  const rng=document.getElementById('price-range');
+  if(!m||!s){res.style.display='none';alert('Please select both car model and service type.');return;}
+  const p=prices[s]&&prices[s][m]?prices[s][m]:'Call for quote';
+  rng.textContent=p==='Call for quote'?p:'₹'+p.replace('-',' – ₹');
+  res.style.display='block';
+}
+
+// ── FAQ TOGGLE ────────────────────────────────────────
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// ── BOOKING FORM ──────────────────────────────────────
+function getMsg(){
+  return `Service Booking – K.B. Motors
+
+Name: ${document.getElementById('name').value}
+Phone: ${document.getElementById('phone').value}
+Vehicle: ${document.getElementById('vehicle').value}
+Date: ${document.getElementById('date').value}
+Service: ${document.getElementById('service-type').value}
+Notes: ${document.getElementById('notes').value||'—'}
+
+Sent from KB Motors website`;
+}
+
+function handleBooking(e){
+  e.preventDefault();
+  showToast();
+  // Also send via WhatsApp
+  setTimeout(()=>{
+    if(confirm('Booking noted! Would you also like to send this via WhatsApp for faster confirmation?')){
+      sendWhatsApp();
+    }
+  },1200);
+}
+
+function sendWhatsApp(){
+  window.open('https://wa.me/919835214115?text='+encodeURIComponent(getMsg()),'_blank');
+}
+
+function showToast(){
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4000);
+}
+
+// Set minimum booking date to today
+const dateInput=document.getElementById('date');
+if(dateInput){
+  const today=new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min',today);
+}
+</script>
+</body>
+</html>
